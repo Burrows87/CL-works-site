@@ -19,11 +19,14 @@ const translations = {
     principleOne: "Semplicità", principleOneDesc: "Interfacce chiare, senza rumore.",
     principleTwo: "Utilità", principleTwoDesc: "Partire da bisogni reali.",
     principleThree: "Evoluzione", principleThreeDesc: "Migliorare attraverso la pratica.",
-    contactEyebrow: "PARLIAMONE", contactTitle: "Hai un'idea in mente?",
+    contactEyebrow: "PARLIAMONE",
+    contactTitle: "Hai un'idea in mente?",
     contactCopy: "Sono sempre curioso di conoscere nuove idee, collaborazioni e progetti interessanti.",
-    contactButton: "Scrivimi", emailNote: "L'indirizzo email può essere aggiornato in base alla casella che utilizzi.",
+    contactButton: "Scrivimi",
+    emailNote: "Per informazioni, collaborazioni o supporto, scrivi a",
     footerTagline: "Indipendente per natura. Curioso per scelta."
   },
+
   en: {
     navProjects: "Projects", navAbout: "Approach", navContact: "Contact",
     eyebrow: "Independent studio · Digital products",
@@ -44,9 +47,11 @@ const translations = {
     principleOne: "Simplicity", principleOneDesc: "Clear interfaces, less noise.",
     principleTwo: "Usefulness", principleTwoDesc: "Start with real needs.",
     principleThree: "Iteration", principleThreeDesc: "Improve through practice.",
-    contactEyebrow: "LET'S TALK", contactTitle: "Have an idea in mind?",
+    contactEyebrow: "LET'S TALK",
+    contactTitle: "Have an idea in mind?",
     contactCopy: "I'm always curious to hear about new ideas, collaborations and interesting projects.",
-    contactButton: "Get in touch", emailNote: "Update this email address to match the inbox you use.",
+    contactButton: "Get in touch",
+    emailNote: "For inquiries, collaborations or support, email",
     footerTagline: "Independent by nature. Curious by choice."
   }
 };
@@ -57,25 +62,38 @@ let currentLanguage = "it";
 function setLanguage(language) {
   currentLanguage = language;
   document.documentElement.lang = language;
+
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.dataset.i18n;
-    if (translations[language][key]) element.innerHTML = translations[language][key];
+    if (translations[language][key]) {
+      element.innerHTML = translations[language][key];
+    }
   });
+
   document.querySelector(".lang-it").classList.toggle("active", language === "it");
   document.querySelector(".lang-en").classList.toggle("active", language === "en");
   languageToggle.setAttribute("aria-pressed", String(language === "en"));
-  document.title = language === "it"
-    ? "CL Works — Independent digital maker"
-    : "CL Works — Independent digital maker";
-  document.querySelector('meta[name="description"]').setAttribute("content",
+
+  document.title = "CL Works — Independent digital maker";
+
+  document.querySelector('meta[name="description"]').setAttribute(
+    "content",
     language === "it"
       ? "CL Works — prodotti digitali indipendenti, idee trasformate in strumenti semplici e utili."
-      : "CL Works — independent digital products, turning ideas into simple and useful tools.");
-  try { localStorage.setItem("clworks-language", language); } catch (_) {}
+      : "CL Works — independent digital products, turning ideas into simple and useful tools."
+  );
+
+  try {
+    localStorage.setItem("clworks-language", language);
+  } catch (_) {}
 }
 
-languageToggle.addEventListener("click", () => setLanguage(currentLanguage === "it" ? "en" : "it"));
+languageToggle.addEventListener("click", () => {
+  setLanguage(currentLanguage === "it" ? "en" : "it");
+});
+
 document.getElementById("year").textContent = new Date().getFullYear();
+
 try {
   const savedLanguage = localStorage.getItem("clworks-language");
   if (savedLanguage === "en") setLanguage("en");
