@@ -8,87 +8,207 @@
   <meta property="og:title" content="CL Works — Independent digital maker">
   <meta property="og:description" content="Piccoli prodotti digitali, progettati con cura.">
   <meta property="og:type" content="website">
+
   <title>CL Works — Independent digital maker</title>
+
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preload" as="image" href="assets/cl-works-logo.png">
   <link rel="stylesheet" href="styles.css">
+
   <script src="script.js" defer></script>
 </head>
+
 <body>
   <header class="site-header">
     <a class="brand" href="#home" aria-label="CL Works home">
-      <img class="brand-logo" src="assets/cl-works-logo.png" alt="CL Works">
+      <img
+        class="brand-logo"
+        src="assets/cl-works-logo.png"
+        alt="CL Works"
+        width="150"
+        height="48"
+        fetchpriority="high"
+      >
     </a>
+
     <nav class="main-nav" aria-label="Navigazione principale">
       <a href="#projects" data-i18n="navProjects">Progetti</a>
       <a href="#about" data-i18n="navAbout">Approccio</a>
       <a href="#contact" data-i18n="navContact">Contatti</a>
     </nav>
-    <button class="language-toggle" type="button" aria-label="Switch language" aria-pressed="false">
+
+    <button
+      class="language-toggle"
+      type="button"
+      aria-label="Switch language"
+      aria-pressed="false"
+    >
       <span class="lang-it active">IT</span><span class="lang-separator">/</span><span class="lang-en">EN</span>
     </button>
   </header>
 
   <main id="home">
     <section class="hero section-shell">
-      <div class="eyebrow"><span class="status-dot"></span><span data-i18n="eyebrow">Studio indipendente · Prodotti digitali</span></div>
+      <div class="eyebrow">
+        <span class="status-dot"></span>
+        <span data-i18n="eyebrow">Studio indipendente · Prodotti digitali</span>
+      </div>
+
       <h1 data-i18n="heroTitle">Idee semplici.<br><span class="accent-text">Strumenti utili.</span></h1>
-      <p class="hero-copy" data-i18n="heroCopy">CL Works è il mio spazio indipendente per progettare e costruire prodotti digitali che rendono più semplici le cose di ogni giorno.</p>
+
+      <p class="hero-copy" data-i18n="heroCopy">
+        CL Works è il mio spazio indipendente per progettare e costruire prodotti digitali che rendono più semplici le cose di ogni giorno.
+      </p>
+
       <div class="hero-actions">
-        <a class="button button-primary" href="#projects"><span data-i18n="seeProjects">Scopri i progetti</span><span aria-hidden="true">↗</span></a>
+        <a class="button button-primary" href="#projects">
+          <span data-i18n="seeProjects">Scopri i progetti</span>
+          <span aria-hidden="true">↗</span>
+        </a>
         <a class="text-link" href="#about" data-i18n="learnMore">Il mio approccio</a>
       </div>
-      <div class="hero-note"><span class="note-line"></span><span data-i18n="heroNote">Ideati con curiosità. Costruiti con cura.</span></div>
+
+      <div class="hero-note">
+        <span class="note-line"></span>
+        <span data-i18n="heroNote">Ideati con curiosità. Costruiti con cura.</span>
+      </div>
+
       <div class="hero-decoration" aria-hidden="true">
         <div class="deco-grid"></div>
-        <div class="deco-orbit orbit-one"></div><div class="deco-orbit orbit-two"></div>
+        <div class="deco-orbit orbit-one"></div>
+        <div class="deco-orbit orbit-two"></div>
         <div class="deco-core"><span>CL</span><small>WORKS</small></div>
-        <span class="deco-label label-one">IDEA → BUILD</span><span class="deco-label label-two">MAKE IT USEFUL</span>
+        <span class="deco-label label-one">IDEA → BUILD</span>
+        <span class="deco-label label-two">MAKE IT USEFUL</span>
       </div>
     </section>
 
     <section class="projects-section section-shell" id="projects">
       <div class="section-heading">
-        <div><p class="eyebrow" data-i18n="projectsEyebrow">IN EVIDENZA</p><h2 data-i18n="projectsTitle">Progetti in costruzione</h2></div>
-        <p class="section-intro" data-i18n="projectsIntro">Ogni progetto parte da un'esigenza concreta e cresce passo dopo passo.</p>
+        <div>
+          <p class="eyebrow" data-i18n="projectsEyebrow">IN EVIDENZA</p>
+          <h2 data-i18n="projectsTitle">Progetti in costruzione</h2>
+        </div>
+        <p class="section-intro" data-i18n="projectsIntro">
+          Ogni progetto parte da un'esigenza concreta e cresce passo dopo passo.
+        </p>
       </div>
+
       <div class="project-grid">
         <article class="project-card project-looply">
-          <div class="project-topline"><span class="project-number">01</span><span class="project-status"><span class="tiny-dot"></span><span data-i18n="statusLive">App in evoluzione</span></span></div>
-          <div class="project-symbol looply-symbol" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="project-topline">
+            <span class="project-number">01</span>
+            <span class="project-status">
+              <span class="tiny-dot"></span>
+              <span data-i18n="statusLive">App in evoluzione</span>
+            </span>
+          </div>
+
+          <div class="project-symbol looply-symbol" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+
           <p class="project-type">SOCIAL · CONNECTIONS</p>
           <h3>Looply</h3>
-          <p class="project-description" data-i18n="looplyDesc">Un modo semplice per coordinarsi con gli amici e trovare il momento giusto per vedersi.</p>
-          <a class="project-link" href="https://looply.clworks.it" target="_blank" rel="noreferrer"><span data-i18n="openApp">Apri l'app</span><span aria-hidden="true">↗</span></a>
+
+          <p class="project-description" data-i18n="looplyDesc">
+            Un modo semplice per coordinarsi con gli amici e trovare il momento giusto per vedersi.
+          </p>
+
+          <a class="project-link" href="https://looply.clworks.it" target="_blank" rel="noopener noreferrer">
+            <span data-i18n="openApp">Apri l'app</span>
+            <span aria-hidden="true">↗</span>
+          </a>
         </article>
+
         <article class="project-card project-chordeezy">
-          <div class="project-topline"><span class="project-number">02</span><span class="project-status"><span class="tiny-dot muted-dot"></span><span data-i18n="statusInDev">In sviluppo</span></span></div>
-          <div class="project-symbol chord-symbol" aria-hidden="true"><span>♪</span><span>♫</span><span>♩</span></div>
+          <div class="project-topline">
+            <span class="project-number">02</span>
+            <span class="project-status">
+              <span class="tiny-dot muted-dot"></span>
+              <span data-i18n="statusInDev">In sviluppo</span>
+            </span>
+          </div>
+
+          <div class="project-symbol chord-symbol" aria-hidden="true">
+            <span>♪</span><span>♫</span><span>♩</span>
+          </div>
+
           <p class="project-type">MUSIC · PRACTICE</p>
           <h3>Chordeezy</h3>
-          <p class="project-description" data-i18n="chordeezyDesc">Un progetto musicale pensato per raccogliere brani e rendere più fluida la pratica con lo strumento.</p>
-          <span class="project-link project-link-muted"><span data-i18n="comingSoon">Maggiori dettagli in arrivo</span><span aria-hidden="true">↗</span></span>
+
+          <p class="project-description" data-i18n="chordeezyDesc">
+            Un progetto musicale pensato per raccogliere brani e rendere più fluida la pratica con lo strumento.
+          </p>
+
+          <span class="project-link project-link-muted">
+            <span data-i18n="comingSoon">Maggiori dettagli in arrivo</span>
+            <span aria-hidden="true">↗</span>
+          </span>
         </article>
+
         <article class="project-card project-lab">
-          <div class="project-topline"><span class="project-number">03</span><span class="project-status"><span class="tiny-dot muted-dot"></span><span data-i18n="statusExploring">In esplorazione</span></span></div>
-          <div class="project-symbol lab-symbol" aria-hidden="true"><span>+</span><span>○</span><span>↗</span></div>
+          <div class="project-topline">
+            <span class="project-number">03</span>
+            <span class="project-status">
+              <span class="tiny-dot muted-dot"></span>
+              <span data-i18n="statusExploring">In esplorazione</span>
+            </span>
+          </div>
+
+          <div class="project-symbol lab-symbol" aria-hidden="true">
+            <span>+</span><span>○</span><span>↗</span>
+          </div>
+
           <p class="project-type">EXPERIMENTS · IDEAS</p>
           <h3 data-i18n="labTitle">Digital Lab</h3>
-          <p class="project-description" data-i18n="labDesc">Esperimenti, prototipi e nuove idee che potrebbero diventare i prossimi strumenti digitali.</p>
-          <span class="project-link project-link-muted"><span data-i18n="inProgress">In progress</span><span aria-hidden="true">↗</span></span>
+
+          <p class="project-description" data-i18n="labDesc">
+            Esperimenti, prototipi e nuove idee che potrebbero diventare i prossimi strumenti digitali.
+          </p>
+
+          <span class="project-link project-link-muted">
+            <span data-i18n="inProgress">In progress</span>
+            <span aria-hidden="true">↗</span>
+          </span>
         </article>
       </div>
     </section>
 
     <section class="about-section" id="about">
       <div class="section-shell about-layout">
-        <div><p class="eyebrow" data-i18n="approachEyebrow">L'APPROCCIO</p><h2 data-i18n="aboutTitle">Costruire con uno scopo.</h2></div>
+        <div>
+          <p class="eyebrow" data-i18n="approachEyebrow">L'APPROCCIO</p>
+          <h2 data-i18n="aboutTitle">Costruire con uno scopo.</h2>
+        </div>
+
         <div class="about-content">
-          <p class="about-lead" data-i18n="aboutLead">Non servono sempre più funzioni. Servono le funzioni giuste.</p>
-          <p data-i18n="aboutCopy">CL Works nasce dalla curiosità di trasformare problemi quotidiani e passioni personali in esperienze digitali accessibili. Progetto, provo, imparo e miglioro: un passo alla volta, con attenzione alle persone che useranno ciò che costruisco.</p>
+          <p class="about-lead" data-i18n="aboutLead">
+            Non servono sempre più funzioni. Servono le funzioni giuste.
+          </p>
+
+          <p data-i18n="aboutCopy">
+            CL Works nasce dalla curiosità di trasformare problemi quotidiani e passioni personali in esperienze digitali accessibili. Progetto, provo, imparo e miglioro: un passo alla volta, con attenzione alle persone che useranno ciò che costruisco.
+          </p>
+
           <div class="principles">
-            <div><span class="principle-index">01</span><strong data-i18n="principleOne">Semplicità</strong><span data-i18n="principleOneDesc">Interfacce chiare, senza rumore.</span></div>
-            <div><span class="principle-index">02</span><strong data-i18n="principleTwo">Utilità</strong><span data-i18n="principleTwoDesc">Partire da bisogni reali.</span></div>
-            <div><span class="principle-index">03</span><strong data-i18n="principleThree">Evoluzione</strong><span data-i18n="principleThreeDesc">Migliorare attraverso la pratica.</span></div>
+            <div>
+              <span class="principle-index">01</span>
+              <strong data-i18n="principleOne">Semplicità</strong>
+              <span data-i18n="principleOneDesc">Interfacce chiare, senza rumore.</span>
+            </div>
+
+            <div>
+              <span class="principle-index">02</span>
+              <strong data-i18n="principleTwo">Utilità</strong>
+              <span data-i18n="principleTwoDesc">Partire da bisogni reali.</span>
+            </div>
+
+            <div>
+              <span class="principle-index">03</span>
+              <strong data-i18n="principleThree">Evoluzione</strong>
+              <span data-i18n="principleThreeDesc">Migliorare attraverso la pratica.</span>
+            </div>
           </div>
         </div>
       </div>
@@ -99,12 +219,17 @@
         <div>
           <p class="eyebrow" data-i18n="contactEyebrow">PARLIAMONE</p>
           <h2 data-i18n="contactTitle">Hai un'idea in mente?</h2>
-          <p data-i18n="contactCopy">Sono sempre curioso di conoscere nuove idee, collaborazioni e progetti interessanti.</p>
+          <p data-i18n="contactCopy">
+            Sono sempre curioso di conoscere nuove idee, collaborazioni e progetti interessanti.
+          </p>
         </div>
+
         <a class="button button-primary" href="mailto:info@clworks.it?subject=Contatto%20CL%20Works">
-          <span data-i18n="contactButton">Scrivimi</span><span aria-hidden="true">↗</span>
+          <span data-i18n="contactButton">Scrivimi</span>
+          <span aria-hidden="true">↗</span>
         </a>
       </div>
+
       <p class="contact-footnote">
         <span data-i18n="emailNote">Per informazioni, collaborazioni o supporto, scrivi a</span>
         <a href="mailto:info@clworks.it">info@clworks.it</a>.
@@ -114,9 +239,20 @@
 
   <footer class="site-footer">
     <a class="brand footer-brand" href="#home" aria-label="CL Works home">
-      <img class="brand-logo" src="assets/cl-works-logo.png" alt="CL Works">
+      <img
+        class="brand-logo"
+        src="assets/cl-works-logo.png"
+        alt="CL Works"
+        width="150"
+        height="48"
+        loading="lazy"
+      >
     </a>
-    <span class="footer-tagline" data-i18n="footerTagline">Indipendente per natura. Curioso per scelta.</span>
+
+    <span class="footer-tagline" data-i18n="footerTagline">
+      Indipendente per natura. Curioso per scelta.
+    </span>
+
     <span class="copyright">© <span id="year"></span> CL Works</span>
   </footer>
 </body>
