@@ -92,6 +92,7 @@ h1 span, .benefit-copy h2 span, .cta-content h2 span { color: var(--accent); }
 .problem-inner p { margin: 0; font-family: 'Manrope',sans-serif; font-size: clamp(1.2rem,2.3vw,1.75rem); font-weight: 800; letter-spacing: -.04em; }
 .problem-aside { margin-left: auto; padding-left: 28px; border-left: 1px solid #d0e1db; color: #66817b; font-size: .84rem; line-height: 1.45; white-space: nowrap; }
 .how-section { padding-block: 110px 120px; }
+.how-section .screenshots-grid { margin-top: 0; }
 .section-heading { max-width: 680px; margin: 0 auto 54px; text-align: center; }
 .section-heading .eyebrow { justify-content: center; margin-bottom: 12px; }
 .section-heading h2 { margin-bottom: 12px; font-size: clamp(2.4rem,4vw,3.5rem); line-height: 1.15; }
