@@ -1062,7 +1062,7 @@ button:focus-visible {
 
 .deco-core img {
   display: block;
-  width: 124px;
+  width: 136px;
   height: auto;
   max-width: none;
   max-height: none;
@@ -1079,7 +1079,7 @@ button:focus-visible {
   }
 
   .deco-core img {
-    width: 96px;
+    width: 104px;
   }
 }
 
@@ -1090,6 +1090,6 @@ button:focus-visible {
   }
 
   .deco-core img {
-    width: 74px;
+    width: 82px;
   }
 }
