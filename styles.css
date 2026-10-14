@@ -1050,9 +1050,11 @@ button:focus-visible {
   object-fit: contain;
 }
 
-/* Logo ufficiale: più grande e centrato nel riquadro */
+/* Logo ufficiale: dimensioni e centratura proporzionate al riquadro */
 .deco-core {
-  padding: 3px;
+  width: 140px;
+  height: 140px;
+  padding: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1060,25 +1062,34 @@ button:focus-visible {
 
 .deco-core img {
   display: block;
-  width: 108px;
-  height: 108px;
-  max-width: 100%;
-  max-height: 100%;
+  width: 124px;
+  height: auto;
+  max-width: none;
+  max-height: none;
   object-fit: contain;
   object-position: center;
-  margin: auto;
+  flex: 0 0 auto;
+  margin: 0;
 }
 
 @media (max-width: 900px) {
+  .deco-core {
+    width: 112px;
+    height: 112px;
+  }
+
   .deco-core img {
-    width: 84px;
-    height: 84px;
+    width: 96px;
   }
 }
 
 @media (max-width: 620px) {
+  .deco-core {
+    width: 88px;
+    height: 88px;
+  }
+
   .deco-core img {
-    width: 64px;
-    height: 64px;
+    width: 74px;
   }
 }
