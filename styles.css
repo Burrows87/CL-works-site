@@ -1065,6 +1065,7 @@ button:focus-visible {
   width: 200px;
   height: auto;
   max-width: none;
+  transform: translateX(-14px);
   max-height: none;
   object-fit: contain;
   object-position: center;
