@@ -1094,3 +1094,19 @@ button:focus-visible {
     width: 118px;
   }
 }
+
+
+/* Daily songs project tagline */
+.daily-songs-tagline {
+  margin: 2px 0 12px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+.daily-songs-logo img {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+}
