@@ -91,6 +91,7 @@ a{color:inherit;text-decoration:none}
 .availability{display:flex;align-items:center;gap:12px;font-size:9px;font-weight:900;letter-spacing:.12em;color:#52665d}
 .availability span{background:#d58a52;box-shadow:0 0 0 5px #f5e1cf}
 .buy-action small{font-size:9px;color:#78857e;line-height:1.6;max-width:250px}
+.price-line{display:flex;align-items:baseline;flex-wrap:wrap;gap:12px;margin:0 0 2px}.old-price{font-family:var(--serif);font-size:24px;color:#8b8d87;text-decoration:line-through;text-decoration-thickness:1.5px}.current-price{font-size:clamp(38px,4vw,48px);font-weight:850;letter-spacing:-.07em;color:var(--wood-dark);line-height:1}.price-label{font-size:10px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}.button-disabled,.button-disabled:hover{cursor:not-allowed;opacity:.58;filter:grayscale(.25);transform:none;box-shadow:none;pointer-events:none}.button-disabled:disabled{color:#fffdf8}
 .footer{border-top:1px solid var(--line);background:var(--paper)}
 .footer-inner{min-height:110px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .footer-brand{display:flex;align-items:center;gap:13px}
