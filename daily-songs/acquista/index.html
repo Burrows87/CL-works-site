@@ -3,71 +3,76 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fbf6ed">
-  <meta name="description" content="Scopri Daily Songs, il calendario musicale: 365 giorni di canzoni, curiosità e QR code per ascoltare su Spotify.">
-  <meta property="og:title" content="Acquista Daily Songs — CL Works">
-  <meta property="og:description" content="Un anno di musica, una canzone alla volta. Scopri il calendario Daily Songs.">
-  <title>Acquista Daily Songs — CL Works</title>
+  <meta name="theme-color" content="#fbf8f2">
+  <meta name="description" content="Checkout Daily Songs: prepara il tuo ordine del calendario musicale.">
+  <title>Completa l'ordine — Daily Songs</title>
   <link rel="icon" type="image/svg+xml" href="../../assets/daily-songs-logo.svg">
-  <link rel="stylesheet" href="styles.css?v=20261030-product">
+  <link rel="stylesheet" href="styles.css?v=20261030-checkout">
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="../" aria-label="Torna a Daily Songs">
-      <img src="../../assets/daily-songs-logo.svg" alt="Daily Songs" class="brand-logo">
-      <span>powered by <strong>CL Works</strong></span>
-    </a>
-    <a class="back-link" href="../">← Torna alla presentazione</a>
+    <a class="brand" href="../" aria-label="Torna a Daily Songs"><img src="../../assets/daily-songs-logo.svg" alt="Daily Songs" class="brand-logo"><span>powered by <strong>CL Works</strong></span></a>
+    <a class="back-link" href="../">← Torna al prodotto</a>
   </header>
 
-  <main class="wrap">
-    <nav class="breadcrumbs" aria-label="Percorso"><a href="../">Daily Songs</a><span>/</span><span>Il calendario</span></nav>
+  <main class="wrap checkout-wrap">
+    <div class="checkout-heading">
+      <nav class="breadcrumbs" aria-label="Percorso"><a href="../">Daily Songs</a><span>/</span><span>Checkout</span></nav>
+      <p class="eyebrow">IL TUO ORDINE</p>
+      <h1>Ci siamo quasi.<br><em>Prepariamo il tuo Daily Songs.</em></h1>
+      <p class="intro">Qui potrai inserire i tuoi dati e controllare il riepilogo prima di confermare l'acquisto.</p>
+    </div>
 
-    <section class="product">
-      <div class="visual">
-        <div class="visual-note">MUSIC ALL DAY</div>
-        <div class="calendar">
-          <div class="calendar-brand">DAILY <span>♫</span> SONGS</div>
-          <div class="calendar-rule"></div>
-          <div class="calendar-day">365</div>
-          <div class="calendar-title">giorni di<br><em>musica.</em></div>
-          <div class="calendar-bottom"><span>ASCOLTA · SCOPRI · RIPETI</span><span class="calendar-qr">▦</span></div>
-        </div>
-        <div class="vinyl"></div>
-        <div class="visual-caption">UN PICCOLO RITUALE, OGNI GIORNO</div>
-      </div>
+    <div class="checkout-grid">
+      <form class="checkout-form" action="#" method="post" onsubmit="return false">
+        <section class="form-panel">
+          <div class="panel-heading"><span class="step">01</span><div><h2>Contatti</h2><p>Come possiamo contattarti?</p></div></div>
+          <div class="field-grid">
+            <label>Nome<input type="text" name="nome" autocomplete="given-name" placeholder="Il tuo nome"></label>
+            <label>Cognome<input type="text" name="cognome" autocomplete="family-name" placeholder="Il tuo cognome"></label>
+            <label class="full">Email<input type="email" name="email" autocomplete="email" placeholder="nome@email.it"></label>
+            <label class="full">Telefono <span class="optional">facoltativo</span><input type="tel" name="telefono" autocomplete="tel" placeholder="Il tuo numero"></label>
+          </div>
+        </section>
 
-      <div class="details">
-        <p class="eyebrow"><span></span> IL CALENDARIO MUSICALE</p>
-        <h1>Daily Songs.<br><em>La musica, ogni giorno.</em></h1>
-        <p class="intro">Un calendario pensato per accompagnarti per 365 giorni: ogni giornata ti propone una canzone, una curiosità da scoprire e un QR code per raggiungere il brano su Spotify.</p>
+        <section class="form-panel">
+          <div class="panel-heading"><span class="step">02</span><div><h2>Indirizzo di spedizione</h2><p>Dove desideri ricevere il calendario?</p></div></div>
+          <div class="field-grid">
+            <label class="full">Indirizzo e numero civico<input type="text" name="indirizzo" autocomplete="street-address" placeholder="Via, piazza e numero civico"></label>
+            <label>CAP<input type="text" name="cap" inputmode="numeric" autocomplete="postal-code" placeholder="00000"></label>
+            <label>Città<input type="text" name="citta" autocomplete="address-level2" placeholder="Città"></label>
+            <label>Provincia<input type="text" name="provincia" autocomplete="address-level1" placeholder="Es. PT"></label>
+            <label>Nazione<input type="text" value="Italia" readonly></label>
+            <label class="full">Note per la consegna <span class="optional">facoltative</span><textarea name="note" rows="3" placeholder="Interno, citofono o altre indicazioni"></textarea></label>
+          </div>
+        </section>
 
-        <div class="highlights">
-          <div><span class="highlight-icon">♫</span><span><strong>365 canzoni</strong><small>Una nuova scoperta al giorno</small></span></div>
-          <div><span class="highlight-icon">✳</span><span><strong>Curiosità musicali</strong><small>Piccole storie e dettagli sui brani</small></span></div>
-          <div><span class="highlight-icon">▦</span><span><strong>QR code Spotify</strong><small>Inquadra e raggiungi l'ascolto</small></span></div>
-        </div>
+        <section class="form-panel future-payment">
+          <div class="panel-heading"><span class="step">03</span><div><h2>Pagamento</h2><p>Le modalità di pagamento saranno disponibili all'apertura degli ordini.</p></div></div>
+          <div class="payment-placeholder"><span>◈</span><div><strong>Pagamento non ancora attivo</strong><small>Non verrà richiesto né effettuato alcun pagamento in questa fase.</small></div></div>
+        </section>
+      </form>
 
-        <div class="purchase-card">
-          <div class="purchase-top"><span class="status"><i></i> DISPONIBILITÀ IN PREPARAZIONE</span><span class="edition">PRIMA TIRATURA</span></div>
-          <div class="price"><span class="old-price">€ 39</span><strong>€ 25</strong><span>prezzo lancio</span></div>
-          <p class="limited">✦ Prima tiratura in quantità limitata</p>
-          <button class="buy-button" type="button" disabled aria-disabled="true">Acquista — presto disponibile</button>
-          <p class="disabled-note">Gli acquisti non sono ancora attivi. Stiamo completando la preparazione del prodotto e del servizio di spedizione.</p>
-          <a class="contact" href="mailto:info@clworks.it?subject=Informazioni%20Daily%20Songs">Hai una domanda? Contattaci</a>
-        </div>
-      </div>
-    </section>
+      <aside class="order-column">
+        <section class="order-card">
+          <p class="eyebrow">RIEPILOGO ORDINE</p>
+          <div class="order-product">
+            <div class="product-thumb"><span>DAILY</span><strong>♫</strong><span>SONGS</span></div>
+            <div class="product-info"><strong>Daily Songs</strong><small>Calendario musicale · 365 giorni</small><span class="edition">Prima tiratura</span></div>
+          </div>
+          <div class="quantity-row"><span>Quantità</span><strong>1</strong></div>
+          <div class="summary-line"><span>Prezzo prodotto</span><strong>€ 25,00</strong></div>
+          <div class="summary-line"><span>Spedizione</span><strong class="pending">Da definire</strong></div>
+          <div class="summary-total"><span>Totale</span><strong>€ 25,00 <small>+ spedizione</small></strong></div>
+          <p class="shipping-note">Il costo di spedizione verrà indicato chiaramente prima dell'apertura degli acquisti.</p>
+          <button class="confirm-button" type="button" disabled aria-disabled="true">Acquista — presto disponibile</button>
+          <p class="disabled-note">Checkout in preparazione: il pulsante è disattivato e questo modulo non invia dati.</p>
+        </section>
+        <a class="help-link" href="mailto:info@clworks.it?subject=Informazioni%20ordine%20Daily%20Songs">Hai bisogno di informazioni? <strong>Scrivici</strong></a>
+      </aside>
+    </div>
 
-    <section class="more">
-      <div><p class="eyebrow">UN ANNO DA ASCOLTARE</p><h2>Ogni pagina,<br><em>una nuova storia.</em></h2></div>
-      <p>Daily Songs è un invito a ritagliarti un momento per la musica: ritrovare un brano che conosci, scoprire qualcosa che non sapevi e lasciarti accompagnare da una colonna sonora diversa, giorno dopo giorno.</p>
-    </section>
-
-    <section class="shipping">
-      <span class="shipping-icon">✉</span>
-      <div><strong>Informazioni su ordini e spedizioni</strong><p>Modalità di pagamento, costi e tempi di spedizione saranno comunicati prima dell'apertura degli acquisti.</p></div>
-    </section>
+    <div class="trust-note"><span>✦</span><p><strong>Un regalo da vivere ogni giorno.</strong><br>Stiamo preparando il lancio di Daily Songs. Tutti i dettagli definitivi su spedizione e pagamento saranno pubblicati prima dell'apertura degli ordini.</p></div>
   </main>
 
   <footer class="footer"><div class="wrap footer-inner"><a class="footer-brand" href="https://clworks.it/"><img src="../../assets/cl-works-logo.png" alt="CL Works"><span>Un progetto indipendente di CL Works</span></a><span>© <span id="year">2026</span> CL Works · Daily Songs</span></div></footer>
