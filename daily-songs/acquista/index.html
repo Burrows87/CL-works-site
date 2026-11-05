@@ -60,13 +60,13 @@
             <div class="product-thumb"><span>DAILY</span><strong>♫</strong><span>SONGS</span></div>
             <div class="product-info"><strong>Daily Songs</strong><small>Calendario musicale · 365 giorni</small><span class="edition">Prima tiratura</span></div>
           </div>
-          <div class="quantity-row"><span>Quantità</span><strong>1</strong></div>
-          <div class="summary-line"><span>Prezzo prodotto</span><strong>€ 25,00</strong></div>
-          <div class="summary-line"><span>Spedizione</span><strong class="pending">Da definire</strong></div>
-          <div class="summary-total"><span>Totale</span><strong>€ 25,00 <small>+ spedizione</small></strong></div>
-          <p class="shipping-note">Il costo di spedizione verrà indicato chiaramente prima dell'apertura degli acquisti.</p>
+          <div class="quantity-row"><label for="quantity">Quantità</label><div class="quantity-control"><button type="button" id="qty-minus" aria-label="Diminuisci quantità">−</button><input id="quantity" type="number" min="1" max="30" value="1" inputmode="numeric" aria-label="Quantità calendari"><button type="button" id="qty-plus" aria-label="Aumenta quantità">+</button></div></div>
+          <div class="summary-line"><span>Prezzo prodotto</span><strong id="product-total">€ 25,00</strong></div>
+          <div class="summary-line"><span>Spedizione (Italia)</span><strong id="shipping-total">€ 6,90</strong></div>
+          <div class="summary-total"><span>Totale</span><strong id="grand-total">€ 31,90</strong></div>
+          <p class="shipping-note">Spedizione nazionale stimata: 6,90 € per ordine. Tariffa da confermare in base al peso e alle dimensioni del calendario confezionato.</p>
           <button class="confirm-button" type="button" disabled aria-disabled="true">Acquista — presto disponibile</button>
-          <p class="disabled-note">Checkout in preparazione: il pulsante è disattivato e questo modulo non invia dati.</p>
+          <p class="disabled-note">Checkout in preparazione: il pulsante è disattivato e questo modulo non invia dati. Il limite effettivo di disponibilità sarà gestito da PayPal prima dell’apertura delle vendite.</p>
         </section>
         <a class="help-link" href="mailto:info@clworks.it?subject=Informazioni%20ordine%20Daily%20Songs">Hai bisogno di informazioni? <strong>Scrivici</strong></a>
       </aside>
@@ -76,6 +76,21 @@
   </main>
 
   <footer class="footer"><div class="wrap footer-inner"><a class="footer-brand" href="https://clworks.it/"><img src="../../assets/cl-works-logo.png" alt="CL Works"><span>Un progetto indipendente di CL Works</span></a><span>© <span id="year">2026</span> CL Works · Daily Songs</span></div></footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const qtyInput = document.getElementById('quantity');
+    const euro = value => new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR' }).format(value);
+    function updateOrder() {
+      const qty = Math.min(30, Math.max(1, parseInt(qtyInput.value, 10) || 1));
+      qtyInput.value = qty;
+      document.getElementById('product-total').textContent = euro(qty * 25);
+      document.getElementById('shipping-total').textContent = euro(6.90);
+      document.getElementById('grand-total').textContent = euro(qty * 25 + 6.90);
+    }
+    document.getElementById('qty-minus').addEventListener('click', () => { qtyInput.value = Math.max(1, Number(qtyInput.value) - 1); updateOrder(); });
+    document.getElementById('qty-plus').addEventListener('click', () => { qtyInput.value = Math.min(30, Number(qtyInput.value) + 1); updateOrder(); });
+    qtyInput.addEventListener('change', updateOrder);
+    updateOrder();
+  </script>
 </body>
 </html>
