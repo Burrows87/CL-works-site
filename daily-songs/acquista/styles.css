@@ -18,3 +18,6 @@
 .quantity-control input{width:42px;height:30px;border:1px solid #dfcbb3;border-radius:8px;background:#fffdf9;color:var(--ink);font:700 11px/1.2 inherit;text-align:center;appearance:textfield;-moz-appearance:textfield}
 .quantity-control input::-webkit-outer-spin-button,.quantity-control input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
 .quantity-row label{font-size:10px;color:#776858}
+
+/* Layout semplificato: solo riepilogo ordine */
+.checkout-grid{grid-template-columns:minmax(0,560px);justify-content:center}.order-column{position:static}
