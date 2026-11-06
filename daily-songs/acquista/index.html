@@ -24,34 +24,13 @@
     </div>
 
     <div class="checkout-grid">
-      <form class="checkout-form" action="#" method="post" onsubmit="return false">
-        <section class="form-panel">
-          <div class="panel-heading"><span class="step">01</span><div><h2>Contatti</h2><p>Come possiamo contattarti?</p></div></div>
-          <div class="field-grid">
-            <label>Nome<input type="text" name="nome" autocomplete="given-name" placeholder="Il tuo nome"></label>
-            <label>Cognome<input type="text" name="cognome" autocomplete="family-name" placeholder="Il tuo cognome"></label>
-            <label class="full">Email<input type="email" name="email" autocomplete="email" placeholder="nome@email.it"></label>
-            <label class="full">Telefono <span class="optional">facoltativo</span><input type="tel" name="telefono" autocomplete="tel" placeholder="Il tuo numero"></label>
-          </div>
-        </section>
-
-        <section class="form-panel">
-          <div class="panel-heading"><span class="step">02</span><div><h2>Indirizzo di spedizione</h2><p>Dove desideri ricevere il calendario?</p></div></div>
-          <div class="field-grid">
-            <label class="full">Indirizzo e numero civico<input type="text" name="indirizzo" autocomplete="street-address" placeholder="Via, piazza e numero civico"></label>
-            <label>CAP<input type="text" name="cap" inputmode="numeric" autocomplete="postal-code" placeholder="00000"></label>
-            <label>Città<input type="text" name="citta" autocomplete="address-level2" placeholder="Città"></label>
-            <label>Provincia<input type="text" name="provincia" autocomplete="address-level1" placeholder="Es. PT"></label>
-            <label>Nazione<input type="text" value="Italia" readonly></label>
-            <label class="full">Note per la consegna <span class="optional">facoltative</span><textarea name="note" rows="3" placeholder="Interno, citofono o altre indicazioni"></textarea></label>
-          </div>
-        </section>
-
-        <section class="form-panel future-payment">
-          <div class="panel-heading"><span class="step">03</span><div><h2>Pagamento</h2><p>Le modalità di pagamento saranno disponibili all'apertura degli ordini.</p></div></div>
-          <div class="payment-placeholder"><span>◈</span><div><strong>Pagamento non ancora attivo</strong><small>Non verrà richiesto né effettuato alcun pagamento in questa fase.</small></div></div>
-        </section>
-      </form>
+      <section class="form-panel simple-checkout">
+        <div class="panel-heading"><span class="step">01</span><div><h2>Completa il tuo ordine su PayPal</h2><p>Un unico passaggio, semplice e sicuro.</p></div></div>
+        <p>Quando apriremo le vendite, verrai reindirizzato alla pagina PayPal di Daily Songs. <strong>Qui potrai scegliere direttamente quanti calendari acquistare</strong> e inserire i dati di consegna e contatto.</p>
+        <p>La quantità disponibile sarà gestita da PayPal in base alle giacenze impostate sul prodotto.</p>
+        <div class="payment-placeholder"><span>◈</span><div><strong>Pagamento non ancora attivo</strong><small>Il link PayPal sarà attivato in occasione dell'apertura ufficiale degli ordini.</small></div></div>
+      </section>
+/form>
 
       <aside class="order-column">
         <section class="order-card">
@@ -60,10 +39,10 @@
             <div class="product-thumb"><span>DAILY</span><strong>♫</strong><span>SONGS</span></div>
             <div class="product-info"><strong>Daily Songs</strong><small>Calendario musicale · 365 giorni</small><span class="edition">Prima tiratura</span></div>
           </div>
-          <div class="quantity-row"><label for="quantity">Quantità</label><div class="quantity-control"><button type="button" id="qty-minus" aria-label="Diminuisci quantità">−</button><input id="quantity" type="number" min="1" max="30" value="1" inputmode="numeric" aria-label="Quantità calendari"><button type="button" id="qty-plus" aria-label="Aumenta quantità">+</button></div></div>
-          <div class="summary-line"><span>Prezzo prodotto</span><strong id="product-total">€ 25,00</strong></div>
-          <div class="summary-line"><span>Spedizione (Italia)</span><strong id="shipping-total">€ 6,90</strong></div>
-          <div class="summary-total"><span>Totale</span><strong id="grand-total">€ 31,90</strong></div>
+          <p class="quantity-note">La quantità potrà essere scelta direttamente su PayPal prima del pagamento.</p>
+          <div class="summary-line"><span>1 calendario</span><strong>€ 25,00</strong></div>
+          <div class="summary-line"><span>Spedizione (Italia)</span><strong>€ 6,90</strong></div>
+          <div class="summary-total"><span>Totale per 1 calendario</span><strong>€ 31,90</strong></div>
           <p class="shipping-note">Spedizione in Italia: tariffa fissa di 6,90 € per ordine, indipendentemente dal numero di calendari acquistati.</p>
           <button class="confirm-button" type="button" disabled aria-disabled="true" data-paypal-url="https://www.paypal.com/ncp/payment/2KWJ3SKG7ENMS">Acquisto tramite PayPal — apertura a breve</button>
           <p class="disabled-note">Il pagamento sarà gestito in sicurezza da PayPal. Il pulsante resterà disattivato fino all’apertura ufficiale delle vendite; quantità definitiva e indirizzo di consegna saranno confermati su PayPal.</p>
@@ -76,21 +55,6 @@
   </main>
 
   <footer class="footer"><div class="wrap footer-inner"><a class="footer-brand" href="https://clworks.it/"><img src="../../assets/cl-works-logo.png" alt="CL Works"><span>Un progetto indipendente di CL Works</span></a><span>© <span id="year">2026</span> CL Works · Daily Songs</span></div></footer>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const qtyInput = document.getElementById('quantity');
-    const euro = value => new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR' }).format(value);
-    function updateOrder() {
-      const qty = Math.min(30, Math.max(1, parseInt(qtyInput.value, 10) || 1));
-      qtyInput.value = qty;
-      document.getElementById('product-total').textContent = euro(qty * 25);
-      document.getElementById('shipping-total').textContent = euro(6.90);
-      document.getElementById('grand-total').textContent = euro(qty * 25 + 6.90);
-    }
-    document.getElementById('qty-minus').addEventListener('click', () => { qtyInput.value = Math.max(1, Number(qtyInput.value) - 1); updateOrder(); });
-    document.getElementById('qty-plus').addEventListener('click', () => { qtyInput.value = Math.min(30, Number(qtyInput.value) + 1); updateOrder(); });
-    qtyInput.addEventListener('change', updateOrder);
-    updateOrder();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
