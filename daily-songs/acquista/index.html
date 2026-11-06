@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#fbf8f2">
-  <meta name="description" content="Checkout Daily Songs: prepara il tuo ordine del calendario musicale.">
+  <meta name="description" content="Completa il tuo ordine Daily Songs: dati di spedizione e riepilogo.">
   <title>Completa l'ordine — Daily Songs</title>
   <link rel="icon" type="image/svg+xml" href="../../assets/daily-songs-logo.svg">
-  <link rel="stylesheet" href="styles.css?v=20261105-checkout">
+  <link rel="stylesheet" href="styles.css?v=20261106-checkout">
 </head>
 <body>
   <header class="topbar">
@@ -19,11 +19,65 @@
     <div class="checkout-heading">
       <nav class="breadcrumbs" aria-label="Percorso"><a href="../">Daily Songs</a><span>/</span><span>Checkout</span></nav>
       <p class="eyebrow">IL TUO ORDINE</p>
-      <h1>Ci siamo quasi.<br><em>Prepariamo il tuo Daily Songs.</em></h1>
-      <p class="intro">Riepilogo del prodotto e informazioni per l’acquisto.</p>
+      <h1>Completa il tuo<br><em>ordine Daily Songs.</em></h1>
+      <p class="intro">Inserisci i dati per la consegna e controlla il riepilogo prima del pagamento.</p>
     </div>
 
-    <div class="checkout-grid">
+    <div class="checkout-grid checkout-layout">
+      <form class="checkout-form" id="order-form" action="#" method="post" onsubmit="return false">
+        <section class="form-panel">
+          <div class="panel-heading"><span class="step">01</span><div><h2>Contatti</h2><p>I dati per aggiornarti sul tuo ordine.</p></div></div>
+          <div class="field-grid">
+            <label>Nome<input type="text" name="nome" autocomplete="given-name" placeholder="Il tuo nome" required></label>
+            <label>Cognome<input type="text" name="cognome" autocomplete="family-name" placeholder="Il tuo cognome" required></label>
+            <label class="full">Email<input type="email" name="email" autocomplete="email" placeholder="nome@email.it" required></label>
+            <label class="full">Telefono <span class="optional">consigliato per la consegna</span><input type="tel" name="telefono" autocomplete="tel" placeholder="Il tuo numero"></label>
+          </div>
+        </section>
+
+        <section class="form-panel">
+          <div class="panel-heading"><span class="step">02</span><div><h2>Indirizzo di spedizione</h2><p>Dove desideri ricevere Daily Songs?</p></div></div>
+          <div class="field-grid">
+            <label class="full">Indirizzo e numero civico<input type="text" name="indirizzo_spedizione" autocomplete="shipping street-address" placeholder="Via, piazza e numero civico" required></label>
+            <label>CAP<input type="text" name="cap_spedizione" inputmode="numeric" autocomplete="shipping postal-code" placeholder="00000" required></label>
+            <label>Città<input type="text" name="citta_spedizione" autocomplete="shipping address-level2" placeholder="Città" required></label>
+            <label>Provincia<input type="text" name="provincia_spedizione" autocomplete="shipping address-level1" placeholder="Es. PT" required></label>
+            <label>Nazione<input type="text" name="nazione_spedizione" value="Italia" readonly></label>
+            <label class="full">Note per la consegna <span class="optional">facoltative</span><textarea name="note_consegna" rows="3" placeholder="Interno, citofono o altre indicazioni"></textarea></label>
+          </div>
+        </section>
+
+        <section class="form-panel">
+          <div class="panel-heading"><span class="step">03</span><div><h2>Fatturazione</h2><p>Puoi utilizzare lo stesso indirizzo o inserirne uno diverso.</p></div></div>
+          <label class="check-line"><input type="checkbox" id="same-billing" checked> L'indirizzo di fatturazione è uguale a quello di spedizione</label>
+          <div class="field-grid billing-fields" id="billing-fields" hidden>
+            <label class="full">Intestatario / Ragione sociale<input type="text" name="intestatario_fatturazione" autocomplete="billing name" placeholder="Nome e cognome o ragione sociale"></label>
+            <label class="full">Indirizzo e numero civico<input type="text" name="indirizzo_fatturazione" autocomplete="billing street-address" placeholder="Via, piazza e numero civico"></label>
+            <label>CAP<input type="text" name="cap_fatturazione" autocomplete="billing postal-code" placeholder="00000"></label>
+            <label>Città<input type="text" name="citta_fatturazione" autocomplete="billing address-level2" placeholder="Città"></label>
+            <label>Provincia<input type="text" name="provincia_fatturazione" placeholder="Es. PT"></label>
+            <label>Nazione<input type="text" name="nazione_fatturazione" value="Italia" readonly></label>
+          </div>
+          <div class="invoice-extra">
+            <label class="check-line"><input type="checkbox" id="request-invoice"> Desidero richiedere fattura</label>
+            <div class="field-grid invoice-fields" id="invoice-fields" hidden>
+              <label>Codice fiscale<input type="text" name="codice_fiscale" autocomplete="off" placeholder="Codice fiscale"></label>
+              <label>Partita IVA <span class="optional">se presente</span><input type="text" name="partita_iva" placeholder="Partita IVA"></label>
+              <label>Codice destinatario SDI <span class="optional">se disponibile</span><input type="text" name="codice_sdi" placeholder="Codice SDI"></label>
+              <label>PEC <span class="optional">in alternativa allo SDI</span><input type="email" name="pec" placeholder="nome@pec.it"></label>
+            </div>
+            <p class="form-hint">I dati fiscali saranno richiesti solo se necessari per l'emissione della fattura.</p>
+          </div>
+        </section>
+
+        <section class="form-panel payment-panel">
+          <div class="panel-heading"><span class="step">04</span><div><h2>Pagamento</h2><p>Pagamento sicuro tramite PayPal.</p></div></div>
+          <div class="payment-placeholder"><span>◈</span><div><strong>PayPal</strong><small>Il pagamento sarà attivato quando apriranno ufficialmente gli ordini.</small></div></div>
+          <button class="confirm-button" type="button" disabled aria-disabled="true">Continua con PayPal — prossimamente</button>
+          <p class="disabled-note">Il modulo è in fase di preparazione: i dati inseriti in questa pagina non vengono ancora inviati o salvati.</p>
+        </section>
+      </form>
+
       <aside class="order-column">
         <section class="order-card">
           <p class="eyebrow">RIEPILOGO ORDINE</p>
@@ -31,22 +85,42 @@
             <div class="product-thumb"><span>DAILY</span><strong>♫</strong><span>SONGS</span></div>
             <div class="product-info"><strong>Daily Songs</strong><small>Calendario musicale · 365 giorni</small><span class="edition">Prima tiratura</span></div>
           </div>
-          <p class="quantity-note">La quantità potrà essere scelta direttamente su PayPal prima del pagamento.</p>
-          <div class="summary-line"><span>1 calendario</span><strong>€ 25,00</strong></div>
-          <div class="summary-line"><span>Spedizione (Italia)</span><strong>€ 6,90</strong></div>
-          <div class="summary-total"><span>Totale per 1 calendario</span><strong>€ 31,90</strong></div>
-          <p class="shipping-note">Spedizione in Italia: tariffa fissa di 6,90 € per ordine, indipendentemente dal numero di calendari acquistati.</p>
-          <button class="confirm-button" type="button" disabled aria-disabled="true" data-paypal-url="https://www.paypal.com/ncp/payment/2KWJ3SKG7ENMS">Acquisto tramite PayPal — apertura a breve</button>
-          <p class="disabled-note">Il pagamento sarà gestito in sicurezza da PayPal. Il pulsante resterà disattivato fino all’apertura ufficiale delle vendite; quantità definitiva e indirizzo di consegna saranno confermati su PayPal.</p>
+          <div class="quantity-row"><label for="quantity">Quantità</label><div class="quantity-control"><button type="button" id="qty-minus" aria-label="Diminuisci quantità">−</button><input id="quantity" type="number" min="1" max="30" value="1" inputmode="numeric" aria-label="Quantità calendari"><button type="button" id="qty-plus" aria-label="Aumenta quantità">+</button></div></div>
+          <div class="summary-line"><span>Prodotti</span><strong id="product-total">€ 25,00</strong></div>
+          <div class="summary-line"><span>Spedizione (Italia)</span><strong id="shipping-total">€ 6,90</strong></div>
+          <div class="summary-total"><span>Totale</span><strong id="grand-total">€ 31,90</strong></div>
+          <p class="shipping-note">Prezzo: 25 € per calendario. Spedizione in Italia: tariffa fissa di 6,90 € per ordine.</p>
+          <div class="stock-note">Disponibilità online prevista: massimo 30 calendari.</div>
         </section>
         <a class="help-link" href="mailto:dailysongs@clworks.it?subject=Informazioni%20ordine%20Daily%20Songs">Hai bisogno di informazioni? <strong>Scrivici</strong></a>
       </aside>
     </div>
 
-    <div class="trust-note"><span>✦</span><p><strong>Un regalo da vivere ogni giorno.</strong><br>Stiamo preparando il lancio di Daily Songs. Tutti i dettagli definitivi su spedizione e pagamento saranno pubblicati prima dell'apertura degli ordini.</p></div>
+    <div class="trust-note"><span>✦</span><p><strong>Un regalo da vivere ogni giorno.</strong><br>Stiamo preparando il lancio di Daily Songs. Il pagamento e l'invio dei dati saranno attivati solo quando il checkout sarà completo e verificato.</p></div>
   </main>
 
   <footer class="footer"><div class="wrap footer-inner"><a class="footer-brand" href="https://clworks.it/"><img src="../../assets/cl-works-logo.png" alt="CL Works"><span>Un progetto indipendente di CL Works</span></a><span>© <span id="year">2026</span> CL Works · Daily Songs</span></div></footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const qtyInput = document.getElementById('quantity');
+    const euro = value => new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR' }).format(value);
+    function updateOrder() {
+      const qty = Math.min(30, Math.max(1, parseInt(qtyInput.value, 10) || 1));
+      qtyInput.value = qty;
+      document.getElementById('product-total').textContent = euro(qty * 25);
+      document.getElementById('shipping-total').textContent = euro(6.90);
+      document.getElementById('grand-total').textContent = euro(qty * 25 + 6.90);
+    }
+    document.getElementById('qty-minus').addEventListener('click', () => { qtyInput.value = Math.max(1, Number(qtyInput.value) - 1); updateOrder(); });
+    document.getElementById('qty-plus').addEventListener('click', () => { qtyInput.value = Math.min(30, Number(qtyInput.value) + 1); updateOrder(); });
+    qtyInput.addEventListener('change', updateOrder);
+    const sameBilling = document.getElementById('same-billing');
+    const billingFields = document.getElementById('billing-fields');
+    sameBilling.addEventListener('change', () => { billingFields.hidden = sameBilling.checked; });
+    const requestInvoice = document.getElementById('request-invoice');
+    const invoiceFields = document.getElementById('invoice-fields');
+    requestInvoice.addEventListener('change', () => { invoiceFields.hidden = !requestInvoice.checked; });
+    updateOrder();
+  </script>
 </body>
 </html>
