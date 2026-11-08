@@ -47,32 +47,10 @@
           </div>
         </section>
 
-        <section class="form-panel">
-          <div class="panel-heading"><span class="step">03</span><div><h2>Fatturazione</h2><p>Puoi utilizzare lo stesso indirizzo o inserirne uno diverso.</p></div></div>
-          <label class="check-line"><input type="checkbox" id="same-billing" checked> L'indirizzo di fatturazione è uguale a quello di spedizione</label>
-          <div class="field-grid billing-fields" id="billing-fields" hidden>
-            <label class="full">Intestatario / Ragione sociale<input type="text" name="intestatario_fatturazione" autocomplete="billing name" placeholder="Nome e cognome o ragione sociale"></label>
-            <label class="full">Indirizzo e numero civico<input type="text" name="indirizzo_fatturazione" autocomplete="billing street-address" placeholder="Via, piazza e numero civico"></label>
-            <label>CAP<input type="text" name="cap_fatturazione" autocomplete="billing postal-code" placeholder="00000"></label>
-            <label>Città<input type="text" name="citta_fatturazione" autocomplete="billing address-level2" placeholder="Città"></label>
-            <label>Provincia<input type="text" name="provincia_fatturazione" placeholder="Es. PT"></label>
-            <label>Nazione<input type="text" name="nazione_fatturazione" value="Italia" readonly></label>
-          </div>
-          <div class="invoice-extra">
-            <label class="check-line"><input type="checkbox" id="request-invoice"> Desidero richiedere fattura</label>
-            <div class="field-grid invoice-fields" id="invoice-fields" hidden>
-              <label>Codice fiscale<input type="text" name="codice_fiscale" autocomplete="off" placeholder="Codice fiscale"></label>
-              <label>Partita IVA <span class="optional">se presente</span><input type="text" name="partita_iva" placeholder="Partita IVA"></label>
-              <label>Codice destinatario SDI <span class="optional">se disponibile</span><input type="text" name="codice_sdi" placeholder="Codice SDI"></label>
-              <label>PEC <span class="optional">in alternativa allo SDI</span><input type="email" name="pec" placeholder="nome@pec.it"></label>
-            </div>
-            <p class="form-hint">I dati fiscali saranno richiesti solo se necessari per l'emissione della fattura.</p>
-          </div>
-        </section>
-
         <section class="form-panel payment-panel">
-          <div class="panel-heading"><span class="step">04</span><div><h2>Pagamento</h2><p>Pagamento sicuro tramite PayPal.</p></div></div>
+          <div class="panel-heading"><span class="step">03</span><div><h2>Pagamento</h2><p>Pagamento sicuro tramite PayPal.</p></div></div>
           <div class="payment-placeholder"><span>◈</span><div><strong>PayPal</strong><small>Il pagamento sarà attivato quando apriranno ufficialmente gli ordini.</small></div></div>
+          <p class="form-hint">Non viene emessa fattura. La conferma del pagamento è consultabile nella tua area PayPal.</p>
           <button class="confirm-button" type="button" disabled aria-disabled="true">Continua con PayPal — prossimamente</button>
           <p class="disabled-note">Il modulo è in fase di preparazione: i dati inseriti in questa pagina non vengono ancora inviati o salvati.</p>
         </section>
@@ -114,12 +92,6 @@
     document.getElementById('qty-minus').addEventListener('click', () => { qtyInput.value = Math.max(1, Number(qtyInput.value) - 1); updateOrder(); });
     document.getElementById('qty-plus').addEventListener('click', () => { qtyInput.value = Math.min(30, Number(qtyInput.value) + 1); updateOrder(); });
     qtyInput.addEventListener('change', updateOrder);
-    const sameBilling = document.getElementById('same-billing');
-    const billingFields = document.getElementById('billing-fields');
-    sameBilling.addEventListener('change', () => { billingFields.hidden = sameBilling.checked; });
-    const requestInvoice = document.getElementById('request-invoice');
-    const invoiceFields = document.getElementById('invoice-fields');
-    requestInvoice.addEventListener('change', () => { invoiceFields.hidden = !requestInvoice.checked; });
     updateOrder();
   </script>
 </body>
