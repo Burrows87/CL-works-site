@@ -36,7 +36,7 @@
         </section>
 
         <section class="form-panel">
-          <div class="panel-heading"><span class="step">02</span><div><h2>Indirizzo di spedizione</h2><p>Dove desideri ricevere Daily Songs?</p></div></div>
+          <div class="panel-heading"><span class="step">02</span><div><h2>Indirizzo di spedizione</h2><p>Spediamo esclusivamente in Italia.</p></div></div>
           <div class="field-grid">
             <label class="full">Indirizzo e numero civico<input type="text" name="indirizzo_spedizione" autocomplete="shipping street-address" placeholder="Via, piazza e numero civico" required></label>
             <label>CAP<input type="text" name="cap_spedizione" inputmode="numeric" autocomplete="shipping postal-code" placeholder="00000" required></label>
@@ -65,9 +65,9 @@
           </div>
           <div class="quantity-row"><label for="quantity">Quantità</label><div class="quantity-control"><button type="button" id="qty-minus" aria-label="Diminuisci quantità">−</button><input id="quantity" type="number" min="1" max="30" value="1" inputmode="numeric" aria-label="Quantità calendari"><button type="button" id="qty-plus" aria-label="Aumenta quantità">+</button></div></div>
           <div class="summary-line"><span>Prodotti</span><strong id="product-total">€ 22,90</strong></div>
-          <div class="summary-line"><span>Spedizione (Italia)</span><strong id="shipping-total">€ 6,90</strong></div>
+          <div class="summary-line"><span>Spedizione (Italia)</span><strong id="shipping-total">€ 5,90</strong></div>
           <div class="summary-total"><span>Totale</span><strong id="grand-total">€ 29,80</strong></div>
-          <p class="shipping-note">Prezzo: 22,90 € per calendario. Spedizione in Italia: tariffa fissa di 6,90 € per ordine.</p>
+          <p class="shipping-note">Prezzo: 22,90 € per calendario. Spedizione esclusivamente in Italia: tariffa fissa di 5,90 € per ordine.</p>
           <div class="stock-note">Disponibilità online prevista: massimo 30 calendari.</div>
         </section>
         <a class="help-link" href="mailto:dailysongs@clworks.it?subject=Informazioni%20ordine%20Daily%20Songs">Hai bisogno di informazioni? <strong>Scrivici</strong></a>
@@ -86,8 +86,8 @@
       const qty = Math.min(30, Math.max(1, parseInt(qtyInput.value, 10) || 1));
       qtyInput.value = qty;
       document.getElementById('product-total').textContent = euro(qty * 22.90);
-      document.getElementById('shipping-total').textContent = euro(6.90);
-      document.getElementById('grand-total').textContent = euro(qty * 22.90 + 6.90);
+      document.getElementById('shipping-total').textContent = euro(5.90);
+      document.getElementById('grand-total').textContent = euro(qty * 22.90 + 5.90);
     }
     document.getElementById('qty-minus').addEventListener('click', () => { qtyInput.value = Math.max(1, Number(qtyInput.value) - 1); updateOrder(); });
     document.getElementById('qty-plus').addEventListener('click', () => { qtyInput.value = Math.min(30, Number(qtyInput.value) + 1); updateOrder(); });
