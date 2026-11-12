@@ -10,7 +10,12 @@
   <meta property="og:type" content="website">
   <title>Daily Songs — Music all day</title>
   <link rel="icon" type="image/svg+xml" href="../assets/daily-songs-logo.svg">
-  <link rel="stylesheet" href="styles.css?v=20261023-limited">
+  <link rel="stylesheet" href="styles.css?v=20261112-real-preview">
+  <style>
+    .paper-card.paper-card-real{width:245px;min-height:0;padding:0;overflow:hidden;background:#fff;border:1px solid #e3d0b6;border-radius:3px;box-shadow:0 24px 70px #4a33251e;line-height:0}
+    .paper-card-real img{display:block;width:100%;height:auto;object-fit:contain}
+    @media(max-width:650px){.paper-card.paper-card-real{width:170px}}
+  </style>
 </head>
 <body>
   <header class="topbar">
@@ -37,15 +42,11 @@
           <span>▦ QR code per ascoltare</span>
         </div>
       </div>
-      <div class="hero-art" aria-label="Anteprima grafica Daily Songs">
+      <div class="hero-art" aria-label="Anteprima reale di una pagina del calendario Daily Songs">
         <div class="sun"></div>
         <div class="record"><div class="record-label">DAILY<br>SONGS</div></div>
-        <div class="paper-card">
-          <div class="paper-top"><span>IL TUO DAILY MOMENT</span><span>001 / 365</span></div>
-          <div class="music-mark">♫</div>
-          <div class="paper-title">La tua prossima<br>canzone preferita.</div>
-          <div class="paper-lines"></div>
-          <div class="paper-bottom"><span>ASCOLTA · SCOPRI · RIPETI</span><span class="qr">▦</span></div>
+        <div class="paper-card paper-card-real">
+          <img src="data:image/jpeg;base64,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" alt="Pagina reale del calendario Daily Songs: venerdì 1 gennaio, New Year's Day, con curiosità e QR code Spotify">
         </div>
         <span class="float-note note-a">PLAY YOUR DAY</span>
         <span class="float-note note-b">MUSIC ALL DAY</span>
@@ -98,4 +99,4 @@
   <footer class="footer"><div class="wrap footer-inner"><div class="footer-brand"><img src="../assets/cl-works-logo.png" alt="CL Works"><span>Un progetto indipendente di CL Works</span></div><span>© <span id="year">2026</span> CL Works · Daily Songs</span></div></footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
-</html> 
+</html>
