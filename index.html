@@ -3,258 +3,84 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f9fb">
-  <meta name="description" content="CL Works — prodotti digitali indipendenti, idee trasformate in strumenti semplici e utili.">
-  <meta property="og:title" content="CL Works — Independent digital maker">
-  <meta property="og:description" content="Piccoli prodotti digitali, progettati con cura.">
-  <meta property="og:type" content="website">
-
-  <title>CL Works — Independent digital maker</title>
-
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="preload" as="image" href="assets/cl-works-logo.png">
-  <link rel="stylesheet" href="styles.css">
-
-  <script src="script.js" defer></script>
+  <meta name="theme-color" content="#f5f0e8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="CL Works è temporaneamente in aggiornamento.">
+  <title>CL Works — Sito in aggiornamento</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f0e8;
+      --ink: #33291f;
+      --muted: #76695b;
+      --line: #ded3c4;
+      --accent: #806044;
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      width: min(100%, 620px);
+      padding: clamp(32px, 7vw, 64px);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255,255,255,.48);
+      text-align: center;
+      box-shadow: 0 18px 60px rgba(65,45,25,.06);
+    }
+    .brand {
+      margin: 0 0 42px;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+    .mark {
+      width: 42px;
+      height: 2px;
+      margin: 0 auto 28px;
+      background: var(--accent);
+    }
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(34px, 7vw, 52px);
+      font-weight: 500;
+      letter-spacing: -.035em;
+      line-height: 1.08;
+    }
+    p {
+      max-width: 410px;
+      margin: 20px auto 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    .foot {
+      margin-top: 44px;
+      color: #948575;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+  </style>
 </head>
-
 <body>
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="CL Works home">
-      <img
-        class="brand-logo"
-        src="assets/cl-works-logo.png"
-        alt="CL Works"
-        width="150"
-        height="48"
-        fetchpriority="high"
-      >
-    </a>
-
-    <nav class="main-nav" aria-label="Navigazione principale">
-      <a href="#projects" data-i18n="navProjects">Progetti</a>
-      <a href="#about" data-i18n="navAbout">Approccio</a>
-      <a href="#contact" data-i18n="navContact">Contatti</a>
-    </nav>
-
-    <button
-      class="language-toggle"
-      type="button"
-      aria-label="Switch language"
-      aria-pressed="false"
-    >
-      <span class="lang-it active">IT</span><span class="lang-separator">/</span><span class="lang-en">EN</span>
-    </button>
-  </header>
-
-  <main id="home">
-    <section class="hero section-shell">
-      <div class="eyebrow">
-        <span class="status-dot"></span>
-        <span data-i18n="eyebrow">Studio indipendente · Prodotti digitali</span>
-      </div>
-
-      <h1 data-i18n="heroTitle">Idee semplici.<br><span class="accent-text">Strumenti utili.</span></h1>
-
-      <p class="hero-copy" data-i18n="heroCopy">
-        CL Works è il mio spazio indipendente per progettare e costruire prodotti digitali che rendono più semplici le cose di ogni giorno.
-      </p>
-
-      <div class="hero-actions">
-        <a class="button button-primary" href="#projects">
-          <span data-i18n="seeProjects">Scopri i progetti</span>
-          <span aria-hidden="true">↗</span>
-        </a>
-        <a class="text-link" href="#about" data-i18n="learnMore">Il mio approccio</a>
-      </div>
-
-      <div class="hero-note">
-        <span class="note-line"></span>
-        <span data-i18n="heroNote">Ideati con curiosità. Costruiti con cura.</span>
-      </div>
-
-      <div class="hero-decoration" aria-hidden="true">
-        <div class="deco-grid"></div>
-        <div class="deco-orbit orbit-one"></div>
-        <div class="deco-orbit orbit-two"></div>
-        <div class="deco-core"><img src="assets/cl-works-logo.png" alt="Logo CL Works"></div>
-        <span class="deco-label label-one">IDEA → BUILD</span>
-        <span class="deco-label label-two">MAKE IT USEFUL</span>
-      </div>
-    </section>
-
-    <section class="projects-section section-shell" id="projects">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow" data-i18n="projectsEyebrow">IN EVIDENZA</p>
-          <h2 data-i18n="projectsTitle">Progetti in costruzione</h2>
-        </div>
-        <p class="section-intro" data-i18n="projectsIntro">
-          Ogni progetto parte da un'esigenza concreta e cresce passo dopo passo.
-        </p>
-      </div>
-
-      <div class="project-grid">
-        <article class="project-card project-looply">
-          <div class="project-topline">
-            <span class="project-number">01</span>
-            <span class="project-status">
-              <span class="tiny-dot"></span>
-              <span data-i18n="statusLive">App in evoluzione</span>
-            </span>
-          </div>
-
-          <div class="project-symbol project-logo">
-          <img src="assets/looply-logo.png" alt="Logo Looply">.  
-          </div>
-
-          <p class="project-type">SOCIAL · CONNECTIONS</p>
-          <h3>Looply</h3>
-
-          <p class="project-description" data-i18n="looplyDesc">
-            Un modo semplice per coordinarsi con gli amici e trovare il momento giusto per vedersi.
-          </p>
-
-          <a class="project-link" href="looply/" aria-label="Scopri la pagina dedicata a Looply">
-            <span data-i18n="comingSoon">Scopri Looply</span>
-            <span aria-hidden="true">↗</span>
-          </a>
-        </article>
-
-        <article class="project-card project-chordeezy">
-          <div class="project-topline">
-            <span class="project-number">02</span>
-            <span class="project-status">
-              <span class="tiny-dot muted-dot"></span>
-              <span data-i18n="statusInDev">In sviluppo</span>
-            </span>
-          </div>
-
-          <div class="project-symbol project-logo">
-          <img src="assets/chordeezy-logo.png" alt="Logo Chordeezy">
-          </div>
-
-          <p class="project-type">MUSIC · PRACTICE</p>
-          <h3>Chordeezy</h3>
-
-          <p class="project-description" data-i18n="chordeezyDesc">
-            Un progetto musicale pensato per raccogliere brani e rendere più fluida la pratica con lo strumento.
-          </p>
-
-          <span class="project-link project-link-muted">
-            <span data-i18n="comingSoon">Maggiori dettagli in arrivo</span>
-            <span aria-hidden="true">↗</span>
-          </span>
-        </article>
-
-        <article class="project-card project-lab">
-          <div class="project-topline">
-            <span class="project-number">03</span>
-            <span class="project-status">
-              <span class="tiny-dot muted-dot"></span>
-              <span data-i18n="statusInDev">In sviluppo</span>
-            </span>
-          </div>
-
-          <div class="project-symbol project-logo daily-songs-logo">
-            <img src="assets/daily-songs-logo.svg" alt="Logo Daily songs">
-          </div>
-
-          <p class="project-type">MUSIC · DAILY INSPIRATION</p>
-          <h3>Daily songs</h3>
-          <p class="daily-songs-tagline" data-i18n="dailySongsTagline">music all day</p>
-
-          <p class="project-description" data-i18n="dailySongsDesc">
-            Una piccola dose di musica ogni giorno: lasciati sorprendere da nuove emozioni, un brano alla volta.
-          </p>
-
-          <a class="project-link" href="daily-songs/" aria-label="Scopri la pagina dedicata a Daily Songs">
-            <span data-i18n="dailySongsLink">Scopri Daily Songs</span>
-            <span aria-hidden="true">↗</span>
-          </a>
-        </article>
-      </div>
-    </section>
-
-    <section class="about-section" id="about">
-      <div class="section-shell about-layout">
-        <div>
-          <p class="eyebrow" data-i18n="approachEyebrow">L'APPROCCIO</p>
-          <h2 data-i18n="aboutTitle">Costruire con uno scopo.</h2>
-        </div>
-
-        <div class="about-content">
-          <p class="about-lead" data-i18n="aboutLead">
-            Non servono sempre più funzioni. Servono le funzioni giuste.
-          </p>
-
-          <p data-i18n="aboutCopy">
-            CL Works nasce dalla curiosità di trasformare problemi quotidiani e passioni personali in esperienze digitali accessibili. Progetto, provo, imparo e miglioro: un passo alla volta, con attenzione alle persone che useranno ciò che costruisco.
-          </p>
-
-          <div class="principles">
-            <div>
-              <span class="principle-index">01</span>
-              <strong data-i18n="principleOne">Semplicità</strong>
-              <span data-i18n="principleOneDesc">Interfacce chiare, senza rumore.</span>
-            </div>
-
-            <div>
-              <span class="principle-index">02</span>
-              <strong data-i18n="principleTwo">Utilità</strong>
-              <span data-i18n="principleTwoDesc">Partire da bisogni reali.</span>
-            </div>
-
-            <div>
-              <span class="principle-index">03</span>
-              <strong data-i18n="principleThree">Evoluzione</strong>
-              <span data-i18n="principleThreeDesc">Migliorare attraverso la pratica.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact-section section-shell" id="contact">
-      <div class="contact-panel">
-        <div>
-          <p class="eyebrow" data-i18n="contactEyebrow">PARLIAMONE</p>
-          <h2 data-i18n="contactTitle">Hai un'idea in mente?</h2>
-          <p data-i18n="contactCopy">
-            Sono sempre curioso di conoscere nuove idee, collaborazioni e progetti interessanti.
-          </p>
-        </div>
-
-        <a class="button button-primary" href="mailto:info@clworks.it?subject=Contatto%20CL%20Works">
-          <span data-i18n="contactButton">Scrivimi</span>
-          <span aria-hidden="true">↗</span>
-        </a>
-      </div>
-
-      <p class="contact-footnote">
-        <span data-i18n="emailNote">Per informazioni, collaborazioni o supporto, scrivi a</span>
-        <a href="mailto:info@clworks.it">info@clworks.it</a>.
-      </p>
-    </section>
+  <main>
+    <p class="brand">CL Works</p>
+    <div class="mark" aria-hidden="true"></div>
+    <h1>Stiamo preparando qualcosa di nuovo.</h1>
+    <p>Il sito CL Works è temporaneamente in aggiornamento. Torneremo online con una nuova veste.</p>
+    <p class="foot">Grazie per la pazienza</p>
   </main>
-
-  <footer class="site-footer">
-    <a class="brand footer-brand" href="#home" aria-label="CL Works home">
-      <img
-        class="brand-logo"
-        src="assets/cl-works-logo.png"
-        alt="CL Works"
-        width="150"
-        height="48"
-        loading="lazy"
-      >
-    </a>
-
-    <span class="footer-tagline" data-i18n="footerTagline">
-      Indipendente per natura. Curioso per scelta.
-    </span>
-
-    <span class="copyright">© <span id="year"></span> CL Works</span>
-  </footer>
 </body>
 </html>
